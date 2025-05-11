@@ -14,7 +14,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="inicio">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Inicio</span></a>
             </li>
 
 
@@ -51,9 +51,6 @@
                             <span>Mostrar Alumnos</span></a>
                     </li>
 
-
-
-
                     <!-- Divider -->
                     <hr class="sidebar-divider">
 
@@ -68,7 +65,22 @@
                             <span>Mostrar Asistencias</span></a>
                     </li>
             <?php
-                }
+                } else { ?>
+                    <!-- Divider -->
+                    <hr class="sidebar-divider">
+
+                    <!-- Heading -->
+                    <div class="sidebar-heading">
+                        Asistencias
+                    </div>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="asistencias">
+                            <i class="fas fa-fw fa-chart-area"></i>
+                            <span>Mostrar Asistencias</span></a>
+                    </li>
+                    
+              <?php  }
             }
             ?>
 
