@@ -6,71 +6,112 @@
 
                           <!-- Filtros -->
                           <form action="" method="POST" id="formAsistencia">
-                              <div class="row g-3 align-items-center m-4">
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <label for="fecha" class="col-form-label">Selecciona un día</label>
-                                  </div>
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <input type="date" name="fecha" class="form-control">
-                                  </div>
+                              <div class="row g-3 align-items-center mt-4 mb-4">
 
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <label class="form-label" for="anio">Selecciona un año</label>
-                                  </div>
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <select class="form-control" name="anio">
-                                          <option value="">Selecciona un año</option>
-                                          <option value="2023">2023</option>
-                                          <option value="2024">2024</option>
-                                          <option value="2025">2025</option>
-                                      </select>
-                                  </div>
                                   <div class="col-6 col-lg-2">
-                                      <label class="form-label" for="mes">Selecciona un mes</label>
+                                      <div>
+                                          <label class="form-label" for="filtro">Filtro de busqueda</label>
+                                      </div>
+
+                                      <div>
+                                          <select class="form-control" name="filtro" id="filtro">
+                                              <option value="">Selecciona una opción</option>
+                                              <option value="dia">Por día</option>
+                                              <option value="mes_anio">Por mes y año</option>
+                                               <option value="nombre">Nombre alumno</option>
+                                              <option value="rango">Entre dos fechas</option>
+                                          </select>
+                                      </div>
                                   </div>
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <select class="form-control" name="mes">
-                                          <option value="">Selecciona un mes</option>
-                                          <option value="1">Enero</option>
-                                          <option value="2">Febrero</option>
-                                          <option value="3">Marzo</option><!--  -->
-                                          <option value="4">Abril</option>
-                                          <option value="5">Mayo</option>
-                                          <option value="6">Junio</option>
-                                          <option value="7">Julio</option>
-                                          <option value="8">Agosto</option>
-                                          <option value="9">Septiembre</option>
-                                          <option value="10">Octubre</option>
-                                          <option value="11">Noviembre</option>
-                                          <option value="12">Diciembre</option>
-                                      </select>
-                                  </div>
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <label for="nombre" class="form-label">Nombre del alumno</label>
-                                  </div>
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <input type="text" name="nombre" class="form-control" placeholder="Ej. Silvany">
+
+                                  <!--Opcion dia-->
+                                  <div id="select-dia" style="display: none;" class="col-6 col-lg-2">
+                                      <div>
+                                          <label for="fecha" class="form-label">Selecciona un día</label>
+                                      </div>
+                                      <div>
+                                          <input type="date" name="fecha" class="form-control">
+                                      </div>
+
                                   </div>
 
 
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <label for="semana_inicio" class="form-label">Inicio de semana (Lunes)</label>
-                                  </div>
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <input type="date" name="semana_inicio" id="semana_inicio" class="form-control">
+                                  <!--Opcion mes y año-->
+                                  <div id="select-mes" style="display: none;" class="col-6 col-lg-2">
+
+                                      <div>
+                                          <label class="form-label" for="anio">Selecciona un año</label>
+                                      </div>
+                                      <div>
+                                          <select class="form-control" name="anio">
+                                              <option value="">Selecciona un año</option>
+                                              <option value="2023">2023</option>
+                                              <option value="2024">2024</option>
+                                              <option value="2025">2025</option>
+                                          </select>
+                                      </div>
                                   </div>
 
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <label for="semana_fin" class="form-label">Fin de semana (Domingo)</label>
+                                  <div id="select-anio" style="display: none;" class="col-6 col-lg-2">
+                                      <div>
+                                          <label class="form-label" for="mes">Selecciona un mes</label>
+                                      </div>
+                                      <div>
+                                          <select class="form-control" name="mes">
+                                              <option value="">Selecciona un mes</option>
+                                              <option value="1">Enero</option>
+                                              <option value="2">Febrero</option>
+                                              <option value="3">Marzo</option>
+                                              <option value="4">Abril</option>
+                                              <option value="5">Mayo</option>
+                                              <option value="6">Junio</option>
+                                              <option value="7">Julio</option>
+                                              <option value="8">Agosto</option>
+                                              <option value="9">Septiembre</option>
+                                              <option value="10">Octubre</option>
+                                              <option value="11">Noviembre</option>
+                                              <option value="12">Diciembre</option>
+                                          </select>
+                                      </div>
                                   </div>
-                                  <div class="col-6 col-lg-2 mt-3">
-                                      <input type="date" name="semana_fin" id="semana_fin" class="form-control" readonly>
+
+
+                                  <div id="select-nombre" style="display: none;" class="col-6 col-lg-2">
+
+                                      <div>
+                                          <label for="nombre" class="form-label">Nombre del alumno</label>
+                                      </div>
+                                      <div>
+                                          <input type="text" name="nombre" class="form-control" placeholder="Ej. Silvany">
+                                      </div>
+
+
+                                  </div>
+
+                                  <!--Opcion entre rango de 2 fechas-->
+                                  <div id="semana" style="display: none;" class="col-6 col-lg-2">
+                                      <div>
+                                          <label for="semana_inicio" class="form-label">Fecha 1</label>
+                                      </div>
+                                      <div>
+                                          <input type="date" name="semana_inicio" id="semana_inicio" class="form-control">
+                                      </div>
+                                  </div>
+                                  <div id="semana2" style="display: none;" class="col-6 col-lg-2">
+                                      <div>
+                                          <label for="semana_fin" class="form-label">Fecha 2</label>
+                                      </div>
+                                      <div>
+                                          <input type="date" name="semana_fin" id="semana_fin" class="form-control">
+                                      </div>
+
                                   </div>
 
 
+                                  <!--Boton de envio-->
 
-                                  <div class="col-12 d-flex justify-content-center mt-3">
-                                      <button class="btn btn-primary" type="submit">Buscar</button>
+                                  <div class="col-6 col-lg-2 mt-3" style="display: none;" id="boton">
+                                      <button class="btn btn-primary mt-3" id="envio" type="submit">Buscar</button>
                                   </div>
                               </div>
                           </form>

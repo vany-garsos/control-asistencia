@@ -216,6 +216,7 @@ if (file_exists(__DIR__ . "/../vistas/modulos/padre_token.txt")) {
     <script src="vistas/js/sb-admin-2.min.js"></script>
     <script src="vistas/js/usuarios.js"></script>
     <script src="vistas/js/app.js"></script>
+     <script src="vistas/js/form.js"></script>
 
 
    
